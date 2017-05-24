@@ -1,0 +1,6 @@
+server=segmdewlsl01
+managed=wls_apps5l01
+revision=2345
+server=inmdewlsp01
+managed=wls_ipsap01 y 02
+revision=4321

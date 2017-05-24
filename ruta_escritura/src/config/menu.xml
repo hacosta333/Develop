@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+<!-- INICIA MENU LABORATORIO SALUD -->
+
+	<opcion>
+		<order>1</order>
+		<nombre>1. Agregar nueva ruta escritura</nombre>
+	</opcion>
+	<opcion>
+		<order>2</order>
+		<nombre>2. Eliminar una ruta escritura</nombre>
+	</opcion>
+	<opcion>
+		<order>3</order>
+		<nombre>3. Validar Rutas escritura a Ejecutar</nombre>
+	</opcion>
+	<opcion>
+		<order>4</order>
+		<nombre>4. Ejecutar Rutas escritura</nombre>
+	</opcion>
+
+
+</configuration>
