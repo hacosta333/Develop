@@ -28,11 +28,16 @@ public class UsoEmpleado {
 			+ " Sueldo: " + empleado3.dameSueldo()
 			+ " Fecha de ingreso: " + empleado3.dameFechaAlta());*/
 
-			Empleado[] misEmpleados= new Empleado[3];
+			Empleado[] misEmpleados= new Empleado[4];
 			
-			misEmpleados[0] = new Empleado("Henry Acosta", 5000000, 2002, 9, 17);
+			misEmpleados[0] = new Empleado("Henry Acosta", 5000000, 2013, 11, 05);
 			misEmpleados[1] = new Empleado("Diana Hincapie", 8000000, 2012, 12, 01);
 			misEmpleados[2] = new Empleado("Daniel Acosta", 1200000, 2010, 01, 15);
+			
+			misEmpleados[3] = new Empleado("Antonio Fernandez");
+			
+			
+			
 			
 			for (Empleado i: misEmpleados) {
 				i.subirSueldo(5);
@@ -57,6 +62,11 @@ class Empleado{
 		
 		GregorianCalendar calendario = new GregorianCalendar(anio, mes-1, dia);
 		altaContrato=calendario.getTime();
+	}
+	
+	public Empleado(String nom){
+		this(nom, 40000, 2000, 01, 01);
+		
 	}
 	
 	public String dameNombre(){//getter
