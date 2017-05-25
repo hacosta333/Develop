@@ -91,6 +91,13 @@ class Empleado{
 	//private int anio;
 	//private int mes;
 	//private int dia;
+		
+}
+
+class Jefatura extends Empleado{
 	
-	
+	public Jefatura(String nom, double sue, int anio,int mes, int dia){
+		super(nom,sue,anio,mes,dia);
+		
+	}
 }
