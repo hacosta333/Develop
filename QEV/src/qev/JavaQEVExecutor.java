@@ -9,16 +9,14 @@ public class JavaQEVExecutor {
 		String pass="";
 		
 		try{
-			user=SeguridadUtils.descifrar("{DES}p91HRPpymJBtDD9f1GUhpw==");
-			pass=SeguridadUtils.descifrar("{DES}xyza1erQCNiKxKch42jMrg==");
-			System.out.println(SeguridadUtils.descifrar("{DES}p91HRPpymJBtDD9f1GUhpw=="));
-			System.out.println(SeguridadUtils.descifrar("{DES}xyza1erQCNiKxKch42jMrg=="));
+			user=LeerArchivo.dameInfo("/home/hacostaj/Documents/Repositorio/develop_wme/shells-archivos/QEVs/properties.cfg","user");
+			pass=LeerArchivo.dameInfo("/home/hacostaj/Documents/Repositorio/develop_wme/shells-archivos/QEVs/properties.cfg","pass");
 			
 		}catch (Exception e){
 			e.printStackTrace();
 		}
 		
-		System.out.println(user + " " + pass);
+		//System.out.println(user + " " + pass);
 		if (args[0].equals("wls")){
 		EjecutarBash comando = new EjecutarBash("./iam_weblogic_extract.pl", user, pass, args[1], args[2]);
 		comando.iniciar();
