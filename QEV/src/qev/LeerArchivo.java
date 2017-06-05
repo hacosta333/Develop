@@ -12,12 +12,9 @@ public class LeerArchivo {
         FileReader f = new FileReader(archivo);
         BufferedReader b = new BufferedReader(f);
         while((linea = b.readLine())!=null) {
-        	System.out.println("la linea a parsear es: "+linea);
 			String[] parseo = linea.split(" ");
-			System.out.println("El indice es: "+parseo[0]);
 			if (parseo[0].equals(tipo)){
 				respuesta = SeguridadUtils.descifrar(parseo[1]);
-				System.out.println("La respuesta es: "+respuesta);
 			}
         }
         b.close();
@@ -26,9 +23,5 @@ public class LeerArchivo {
     }
     
     static String respuesta;
-    public static void main(String[] args) throws Exception {
-        dameInfo("/home/hacostaj/Documents/Repositorio/develop_wme/shells-archivos/QEVs/properties.cfg","pass");
-    }
-	   
-		
+    		
 }

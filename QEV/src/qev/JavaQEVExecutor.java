@@ -9,14 +9,13 @@ public class JavaQEVExecutor {
 		String pass="";
 		
 		try{
-			user=LeerArchivo.dameInfo("/home/hacostaj/Documents/Repositorio/develop_wme/shells-archivos/QEVs/properties.cfg","user");
-			pass=LeerArchivo.dameInfo("/home/hacostaj/Documents/Repositorio/develop_wme/shells-archivos/QEVs/properties.cfg","pass");
-			
+			user=LeerArchivo.dameInfo("./properties.cfg","user");
+			pass=LeerArchivo.dameInfo("./properties.cfg","pass");
+						
 		}catch (Exception e){
 			e.printStackTrace();
 		}
 		
-		//System.out.println(user + " " + pass);
 		if (args[0].equals("wls")){
 		EjecutarBash comando = new EjecutarBash("./iam_weblogic_extract.pl", user, pass, args[1], args[2]);
 		comando.iniciar();
