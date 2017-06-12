@@ -1,4 +1,4 @@
-package holaMundo;
+package holamundo;
 
 import java.util.*;
 import javax.swing.*;

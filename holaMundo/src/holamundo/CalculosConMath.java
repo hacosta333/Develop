@@ -1,4 +1,4 @@
-package holaMundo;
+package holamundo;
 
 public class CalculosConMath {
 
