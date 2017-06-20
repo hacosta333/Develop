@@ -44,27 +44,31 @@ public class UsoEmpleado {
 			
 			jefe1.estableceIncentivo(200000);
 			
+			System.out.println(jefe1.tomarDecisiones(jefe1.dameNombre(), " Subir el sueldo de todos"));
+			
+			;
+			System.out.println("El jefe " + jefe1.dameNombre() + " Tiene un bono de " + jefe1.estableceBono(50000));
+			
 			for (Empleado i: misEmpleados) {
 				i.subirSueldo(5);
 				
 			}
+			
+			Arrays.sort(misEmpleados);
 			for (Empleado i: misEmpleados) {
 				System.out.println("Nombre: " + i.dameNombre() 
 				+ " Sueldo: " + i.dameSueldo() //Enlazado dinamico para el Empleado en la posicion 4. llama al dameSueldo de Jefatura.
 				+ " Fecha de ingreso: " + i.dameFechaAlta());
 			}
 			
-			
-			
-			
-			
+						
 			System.out.println("El sueldo de " + jefe1.dameNombre() +"  con incentivo es $"+ jefe1.dameSueldo());
 		
 	}
 
 }
 
-class Empleado{
+class Empleado implements Comparable, Trabajadores{
 	
 	public Empleado(String nom, double sue, int anio, int mes, int dia){
 		nombre=nom;
@@ -101,10 +105,33 @@ class Empleado{
 	//private int anio;
 	//private int mes;
 	//private int dia;
+	@Override
+	public int compareTo(Object miObjeto) {
+		// TODO Auto-generated method stub
+		
+		Empleado otroEmpleado = (Empleado) miObjeto;
+		
+		if (this.sueldo<otroEmpleado.sueldo){
+			return -1;
+		}
+		if (this.sueldo>otroEmpleado.sueldo){
+			return 1;
+		}
+				
+		return 0;
+	}
+
+	@Override
+	public double estableceBono(double bono) {
+		
+		return Trabajadores.bonoBase + bono;
+	}
+
+
 		
 }
 
-class Jefatura extends Empleado{
+class Jefatura extends Empleado implements Jefes{
 	
 	public Jefatura(String nom, double sue, int anio,int mes, int dia){
 		super(nom,sue,anio,mes,dia);
@@ -123,4 +150,18 @@ class Jefatura extends Empleado{
 	}
 	
 	private double incentivo;
+
+	@Override
+	public String tomarDecisiones(String nombre, String decision) {
+		// TODO Auto-generated method stub
+		return nombre + " ha tomado la decision de: " + decision ;
+	}
+	
+	@Override
+	public double estableceBono(double bono) {
+		
+		double prima = 200000;
+		return Trabajadores.bonoBase + bono + prima;
+	}
+	
 }
