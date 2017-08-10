@@ -11,9 +11,20 @@ public class JavaQEVExecutor {
 		String userDir = System.getProperty("user.dir");
 		
 		try{
-			
-			user=LeerArchivo.dameInfo(userDir + "/properties.cfg","user");
-			pass=LeerArchivo.dameInfo(userDir + "/properties.cfg","pass");
+			if (args[0].equals("wls")){
+				user=LeerArchivo.dameInfo(userDir + "/properties.cfg","userwls");
+				pass=LeerArchivo.dameInfo(userDir + "/properties.cfg","passwls");
+			}
+			if (args[0].equals("was")){
+				//user=LeerArchivo.dameInfo("/home/hacostaj/Documents/Repositorio/develop_wme/shells-archivos/QEVs/properties.cfg","userwas");
+				//pass=LeerArchivo.dameInfo("/home/hacostaj/Documents/Repositorio/develop_wme/shells-archivos/QEVs/properties.cfg","passwas");
+				
+				//System.out.println(user);
+				//System.out.println(pass);
+				
+				user=LeerArchivo.dameInfo(userDir + "/properties.cfg","userwas");
+				pass=LeerArchivo.dameInfo(userDir + "/properties.cfg","passwas");
+			}
 			
 		}catch (Exception e){
 			e.printStackTrace();
@@ -25,7 +36,7 @@ public class JavaQEVExecutor {
 		}
 		
 		if (args[0].equals("was")){
-		EjecutarBash comando = new EjecutarBash(userDir + "./iam_was_extract.sh", user, pass, args[1]);
+		EjecutarBash comando = new EjecutarBash(userDir + "/iam_was_extract.sh", user, pass, args[1]);
 		comando.iniciar();
 		}
 		
