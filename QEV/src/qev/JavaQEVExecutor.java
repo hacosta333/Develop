@@ -28,7 +28,6 @@ public class JavaQEVExecutor {
 			
 		}catch (Exception e){
 			e.printStackTrace();
-			
 		}
 		
 		if (args[0].equals("wls")){
