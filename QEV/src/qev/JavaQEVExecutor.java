@@ -41,7 +41,7 @@ public class JavaQEVExecutor {
 		}
 		
 		if (args[0].equals("oas")){
-		EjecutarBash comando = new EjecutarBash(userDir + "./iam_oracle_extract.sh");
+		EjecutarBash comando = new EjecutarBash(userDir + "/iam_oracle_extract.sh");
 		comando.iniciar();
 		}
 
